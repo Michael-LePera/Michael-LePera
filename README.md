@@ -6,7 +6,7 @@ others to obtain a higher level of understanding of numerous software engineerin
 some concepts in related fields such as Data Science and Cyber Security.
 
 
-## Curent Goals
+## Current Goals
 
 - Complete portfolio website
 - Complete numerous projects
