@@ -3,18 +3,14 @@
   description = "Personal profile";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/22.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/23.11";
     utils.url = "github:numtide/flake-utils";
   };
 
   outputs = { self, nixpkgs, ... }@inputs: inputs.utils.lib.eachSystem [
-    "x86_64-linux" "i686-linux" "aarch64-linux" "x86_64-darwin"
+    "x86_64-linux"
   ] (system: let
-    pkgs = import nixpkgs {
-      inherit system;
-      overlays = [];
-      # config.allowUnfree = true;
-    };
+    pkgs = nixpkgs.legacyPackages.${system};
   in {
     devShells.default = pkgs.mkShell rec {
       name = "PersonalProfile";
